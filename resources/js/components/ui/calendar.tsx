@@ -32,7 +32,7 @@ function Calendar({
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn(
-        "group/calendar bg-background p-3 [--cell-radius:var(--radius-md)] [--cell-size:--spacing(8)] in-data-[slot=card-content]:bg-transparent in-data-[slot=popover-content]:bg-transparent",
+        "group/calendar bg-background p-3 nova:p-2 lyra:p-2 [--cell-radius:var(--radius-md)] maia:[--cell-radius:var(--radius-4xl)] lyra:[--cell-radius:0] luma:[--cell-radius:var(--radius-4xl)] sera:[--cell-radius:0] rhea:[--cell-radius:var(--radius-2xl)] [--cell-size:--spacing(8)] nova:[--cell-size:--spacing(7)] lyra:[--cell-size:--spacing(7)] mira:[--cell-size:--spacing(6)] in-data-[slot=card-content]:bg-transparent in-data-[slot=popover-content]:bg-transparent",
         String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
         String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
         className

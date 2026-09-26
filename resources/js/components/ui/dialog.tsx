@@ -30,7 +30,7 @@ function DialogOverlay({
     <DialogPrimitive.Backdrop
       data-slot="dialog-overlay"
       className={cn(
-        "fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
+        "fixed inset-0 isolate z-50 bg-black/10 maia:bg-black/80 mira:bg-black/80 luma:bg-black/30 sera:bg-black/20 rhea:bg-black/30 duration-100 supports-backdrop-filter:backdrop-blur-xs luma:supports-backdrop-filter:backdrop-blur-sm sera:supports-backdrop-filter:backdrop-blur-sm rhea:supports-backdrop-filter:backdrop-blur-sm data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
         className
       )}
       {...props}
@@ -52,7 +52,7 @@ function DialogContent({
       <DialogPrimitive.Popup
         data-slot="dialog-content"
         className={cn(
-          "fixed top-1/2 left-1/2 z-50 grid w-96 max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl bg-popover p-6 text-sm text-popover-foreground ring-1 ring-foreground/10 duration-100 outline-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+          "fixed top-1/2 left-1/2 z-50 grid w-96 max-w-[calc(100%-2rem)] vega:w-md maia:w-md luma:w-md sera:w-md rhea:w-md -translate-x-1/2 -translate-y-1/2 gap-6 nova:gap-4 lyra:gap-4 mira:gap-4 rounded-xl maia:rounded-4xl lyra:rounded-none luma:rounded-4xl sera:rounded-none rhea:rounded-[min(var(--radius-4xl),24px)] bg-popover p-6 nova:p-4 lyra:p-4 mira:p-4 text-sm lyra:text-xs/relaxed mira:text-xs/relaxed text-popover-foreground luma:shadow-xl sera:shadow-md rhea:shadow-xl ring-1 ring-foreground/10 maia:ring-foreground/5 luma:ring-foreground/5 luma:dark:ring-foreground/10 rhea:ring-foreground/5 rhea:dark:ring-foreground/10 duration-100 outline-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
           className
         )}
         {...props}
@@ -64,7 +64,7 @@ function DialogContent({
             render={
               <Button
                 variant="ghost"
-                className="absolute top-4 right-4"
+                className="absolute top-4 right-4 nova:top-2 nova:right-2 lyra:top-2 lyra:right-2 mira:top-2 mira:right-2 sera:top-5 sera:right-5 luma:bg-secondary sera:bg-secondary rhea:bg-secondary"
                 size="icon-sm"
               />
             }
@@ -82,7 +82,7 @@ function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="dialog-header"
-      className={cn("flex flex-col gap-2", className)}
+      className={cn("flex flex-col gap-2 lyra:gap-1 lyra:text-left mira:gap-1 luma:gap-1.5 rhea:gap-1.5", className)}
       {...props}
     />
   )
@@ -100,7 +100,7 @@ function DialogFooter({
     <div
       data-slot="dialog-footer"
       className={cn(
-        "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
+        "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end nova:-mx-4 nova:-mb-4 nova:rounded-b-xl nova:border-t nova:bg-muted/50 nova:p-4",
         className
       )}
       {...props}
@@ -119,7 +119,7 @@ function DialogTitle({ className, ...props }: DialogPrimitive.Title.Props) {
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
-      className={cn("font-heading leading-none font-medium", className)}
+      className={cn("font-heading nova:text-base maia:text-base lyra:text-sm mira:text-sm luma:text-base sera:text-lg rhea:text-base leading-none font-medium sera:font-semibold sera:tracking-wider sera:uppercase", className)}
       {...props}
     />
   )
@@ -133,7 +133,7 @@ function DialogDescription({
     <DialogPrimitive.Description
       data-slot="dialog-description"
       className={cn(
-        "text-sm text-muted-foreground *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground",
+        "text-sm lyra:text-xs/relaxed mira:text-xs/relaxed sera:mt-0.5 sera:leading-relaxed text-muted-foreground *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground",
         className
       )}
       {...props}

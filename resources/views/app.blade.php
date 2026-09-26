@@ -19,6 +19,25 @@
             })();
         </script>
 
+        {{-- Paint the saved preset (style attribute, palette, fonts, radius) before React loads --}}
+        <script>
+            (function() {
+                try {
+                    const code = localStorage.getItem('paka:preset');
+                    const css = localStorage.getItem('paka:preset-css');
+
+                    if (code && css) {
+                        const style = document.createElement('style');
+                        style.id = 'paka-preset';
+                        style.textContent = css;
+                        document.head.appendChild(style);
+                    }
+                } catch (error) {
+                    // Storage may be blocked; the default preset applies instead.
+                }
+            })();
+        </script>
+
         {{-- Inline style to set the HTML background color based on our theme in app.css --}}
         <style>
             html {

@@ -40,7 +40,7 @@ function DropdownMenuContent({
       >
         <MenuPrimitive.Popup
           data-slot="dropdown-menu-content"
-          className={cn("z-50 max-h-(--available-height) w-(--anchor-width) min-w-32 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-md bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 outline-none data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:overflow-hidden data-closed:fade-out-0 data-closed:zoom-out-95", className )}
+          className={cn("z-50 max-h-(--available-height) w-(--anchor-width) min-w-32 maia:min-w-48 luma:min-w-48 sera:min-w-48 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-md nova:rounded-lg maia:rounded-2xl lyra:rounded-none mira:rounded-lg luma:rounded-3xl sera:rounded-none rhea:rounded-2xl bg-popover p-1 lyra:p-0 luma:p-1.5 sera:p-1.5 text-popover-foreground shadow-md maia:shadow-2xl luma:shadow-lg rhea:shadow-lg ring-1 ring-foreground/10 maia:ring-foreground/5 maia:dark:ring-foreground/10 luma:ring-foreground/5 luma:dark:ring-foreground/10 rhea:ring-foreground/5 rhea:dark:ring-foreground/10 duration-100 outline-none data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:overflow-hidden data-closed:fade-out-0 data-closed:zoom-out-95", className )}
           {...props}
         />
       </MenuPrimitive.Positioner>
@@ -64,7 +64,7 @@ function DropdownMenuLabel({
       data-slot="dropdown-menu-label"
       data-inset={inset}
       className={cn(
-        "px-2 py-1.5 text-xs font-medium text-muted-foreground data-inset:pl-8",
+        "px-2 nova:px-1.5 maia:px-3 luma:px-3 sera:px-3 py-1.5 nova:py-1 maia:py-2.5 lyra:py-2 luma:py-2.5 sera:py-2 rhea:py-1 text-xs font-medium maia:font-normal lyra:font-normal mira:font-normal luma:font-normal sera:font-semibold rhea:font-normal sera:tracking-wider sera:uppercase text-muted-foreground data-inset:pl-8 nova:data-inset:pl-7 maia:data-inset:pl-9.5 lyra:data-inset:pl-7 mira:data-inset:pl-7.5 luma:data-inset:pl-9.5 sera:data-inset:pl-9.5 rhea:data-inset:pl-7",
         className
       )}
       {...props}
@@ -87,7 +87,7 @@ function DropdownMenuItem({
       data-inset={inset}
       data-variant={variant}
       className={cn(
-        "group/dropdown-menu-item relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-8 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:text-destructive dark:data-[variant=destructive]:focus:bg-destructive/20 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 data-[variant=destructive]:*:[svg]:text-destructive",
+        "group/dropdown-menu-item relative flex cursor-default items-center gap-2 nova:gap-1.5 maia:gap-2.5 luma:gap-2.5 sera:gap-2.5 rounded-sm nova:rounded-md maia:rounded-xl lyra:rounded-none mira:rounded-md luma:rounded-2xl sera:rounded-none rhea:rounded-xl px-2 nova:px-1.5 maia:px-3 luma:px-3 sera:px-3 py-1.5 nova:py-1 maia:py-2 lyra:py-2 mira:py-1 luma:py-2 sera:py-2 mira:min-h-7 rhea:min-h-7 text-sm lyra:text-xs mira:text-xs/relaxed sera:text-xs luma:font-medium sera:font-medium sera:tracking-wider sera:uppercase outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-8 nova:data-inset:pl-7 maia:data-inset:pl-9.5 lyra:data-inset:pl-7 mira:data-inset:pl-7.5 luma:data-inset:pl-9.5 sera:data-inset:pl-9.5 rhea:data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:text-destructive dark:data-[variant=destructive]:focus:bg-destructive/20 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 mira:[&_svg:not([class*='size-'])]:size-3.5 sera:[&_svg:not([class*='size-'])]:size-3.5 data-[variant=destructive]:*:[svg]:text-destructive",
         className
       )}
       {...props}
@@ -112,7 +112,7 @@ function DropdownMenuSubTrigger({
       data-slot="dropdown-menu-sub-trigger"
       data-inset={inset}
       className={cn(
-        "flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-8 data-popup-open:bg-accent data-popup-open:text-accent-foreground data-open:bg-accent data-open:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "flex cursor-default items-center gap-2 nova:gap-1.5 rounded-sm nova:rounded-md maia:rounded-xl lyra:rounded-none mira:rounded-md luma:rounded-2xl sera:rounded-none rhea:rounded-xl px-2 nova:px-1.5 maia:px-3 luma:px-3 sera:px-3 py-1.5 nova:py-1 maia:py-2 lyra:py-2 mira:py-1 luma:py-2 sera:py-2 mira:min-h-7 rhea:min-h-7 text-sm lyra:text-xs mira:text-xs sera:text-xs luma:font-medium sera:font-medium sera:tracking-wider sera:uppercase outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-8 nova:data-inset:pl-7 maia:data-inset:pl-9.5 lyra:data-inset:pl-7 mira:data-inset:pl-7.5 luma:data-inset:pl-9.5 sera:data-inset:pl-9.5 rhea:data-inset:pl-7 data-popup-open:bg-accent data-popup-open:text-accent-foreground data-open:bg-accent data-open:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 mira:[&_svg:not([class*='size-'])]:size-3.5 sera:[&_svg:not([class*='size-'])]:size-3.5",
         className
       )}
       {...props}
@@ -134,7 +134,7 @@ function DropdownMenuSubContent({
   return (
     <DropdownMenuContent
       data-slot="dropdown-menu-sub-content"
-      className={cn("w-auto min-w-[96px] rounded-md bg-popover p-1 text-popover-foreground shadow-lg ring-1 ring-foreground/10 duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className )}
+      className={cn("w-auto min-w-[96px] maia:min-w-36 mira:min-w-32 luma:min-w-36 sera:min-w-36 rounded-md nova:rounded-lg maia:rounded-2xl lyra:rounded-none mira:rounded-lg luma:rounded-3xl sera:rounded-none rhea:rounded-2xl bg-popover p-1 lyra:p-0 luma:p-1.5 sera:p-1.5 text-popover-foreground shadow-lg maia:shadow-2xl mira:shadow-md sera:shadow-md ring-1 ring-foreground/10 maia:ring-foreground/5 luma:ring-foreground/5 luma:dark:ring-foreground/10 rhea:ring-foreground/5 rhea:dark:ring-foreground/10 duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className )}
       align={align}
       alignOffset={alignOffset}
       side={side}
@@ -158,7 +158,7 @@ function DropdownMenuCheckboxItem({
       data-slot="dropdown-menu-checkbox-item"
       data-inset={inset}
       className={cn(
-        "relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground focus:**:text-accent-foreground data-inset:pl-8 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "relative flex cursor-default items-center gap-2 nova:gap-1.5 maia:gap-2.5 luma:gap-2.5 sera:gap-2.5 rounded-sm nova:rounded-md maia:rounded-xl lyra:rounded-none mira:rounded-md luma:rounded-2xl sera:rounded-none rhea:rounded-xl py-1.5 nova:py-1 maia:py-2 lyra:py-2 luma:py-2 sera:py-2 mira:min-h-7 rhea:min-h-7 pr-8 pl-2 nova:pl-1.5 maia:pl-3 luma:pl-3 sera:pl-3 text-sm lyra:text-xs mira:text-xs sera:text-xs luma:font-medium sera:font-medium sera:tracking-wider sera:uppercase outline-hidden select-none focus:bg-accent focus:text-accent-foreground focus:**:text-accent-foreground data-inset:pl-8 nova:data-inset:pl-7 maia:data-inset:pl-9.5 lyra:data-inset:pl-7 mira:data-inset:pl-7.5 luma:data-inset:pl-9.5 sera:data-inset:pl-9.5 rhea:data-inset:pl-7 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 mira:[&_svg:not([class*='size-'])]:size-3.5 sera:[&_svg:not([class*='size-'])]:size-3.5",
         className
       )}
       checked={checked}
@@ -199,7 +199,7 @@ function DropdownMenuRadioItem({
       data-slot="dropdown-menu-radio-item"
       data-inset={inset}
       className={cn(
-        "relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground focus:**:text-accent-foreground data-inset:pl-8 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "relative flex cursor-default items-center gap-2 nova:gap-1.5 maia:gap-2.5 luma:gap-2.5 sera:gap-2.5 rounded-sm nova:rounded-md maia:rounded-xl lyra:rounded-none mira:rounded-md luma:rounded-2xl sera:rounded-none rhea:rounded-xl py-1.5 nova:py-1 maia:py-2 lyra:py-2 luma:py-2 sera:py-2 mira:min-h-7 rhea:min-h-7 pr-8 pl-2 nova:pl-1.5 maia:pl-3 luma:pl-3 sera:pl-3 text-sm lyra:text-xs mira:text-xs sera:text-xs luma:font-medium sera:font-medium sera:tracking-wider sera:uppercase outline-hidden select-none focus:bg-accent focus:text-accent-foreground focus:**:text-accent-foreground data-inset:pl-8 nova:data-inset:pl-7 maia:data-inset:pl-9.5 lyra:data-inset:pl-7 mira:data-inset:pl-7.5 luma:data-inset:pl-9.5 sera:data-inset:pl-9.5 rhea:data-inset:pl-7 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 mira:[&_svg:not([class*='size-'])]:size-3.5 sera:[&_svg:not([class*='size-'])]:size-3.5",
         className
       )}
       {...props}
@@ -224,7 +224,7 @@ function DropdownMenuSeparator({
   return (
     <MenuPrimitive.Separator
       data-slot="dropdown-menu-separator"
-      className={cn("-mx-1 my-1 h-px bg-border", className)}
+      className={cn("-mx-1 luma:-mx-1.5 sera:-mx-1.5 my-1 lyra:my-0 luma:my-1.5 sera:my-1.5 h-px bg-border maia:bg-border/50 mira:bg-border/50 luma:bg-border/50 sera:bg-border/50 rhea:bg-border/50", className)}
       {...props}
     />
   )
@@ -238,7 +238,7 @@ function DropdownMenuShortcut({
     <span
       data-slot="dropdown-menu-shortcut"
       className={cn(
-        "ml-auto text-xs tracking-widest text-muted-foreground group-focus/dropdown-menu-item:text-accent-foreground",
+        "ml-auto text-xs mira:text-[0.625rem] tracking-widest text-muted-foreground group-focus/dropdown-menu-item:text-accent-foreground",
         className
       )}
       {...props}

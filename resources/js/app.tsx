@@ -3,7 +3,9 @@ import { AppProviders } from '@/components/app-providers';
 import { initializeTheme } from '@/hooks/use-appearance';
 import AppLayout from '@/layouts/app-layout';
 import AuthLayout from '@/layouts/auth-layout';
+import GalleryLayout from '@/layouts/gallery-layout';
 import SettingsLayout from '@/layouts/settings/layout';
+import { initializePreset } from '@/themes/store';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Starter Kit';
 
@@ -22,7 +24,10 @@ createInertiaApp({
         switch (true) {
             case name === 'workspaces/create':
             case name === 'error':
+            case name.startsWith('preview/'):
                 return null;
+            case name.startsWith('gallery/'):
+                return GalleryLayout;
             case name.startsWith('auth/'):
                 return AuthLayout;
             case name.startsWith('settings/'):
@@ -43,3 +48,6 @@ createInertiaApp({
 
 // This will set light / dark mode on load...
 initializeTheme();
+
+// Restore the saved shadcn/create preset (style, palette, fonts, radius)...
+initializePreset();

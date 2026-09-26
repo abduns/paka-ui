@@ -10,7 +10,7 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
     >
       <table
         data-slot="table"
-        className={cn("w-full caption-bottom text-sm", className)}
+        className={cn("w-full caption-bottom text-sm lyra:text-xs mira:text-xs", className)}
         {...props}
       />
     </div>
@@ -68,7 +68,7 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
     <th
       data-slot="table-head"
       className={cn(
-        "h-10 px-2 text-left align-middle font-medium whitespace-nowrap text-foreground [&:has([role=checkbox])]:pr-0",
+        "h-10 maia:h-12 luma:h-12 sera:h-12 px-2 maia:px-3 luma:px-3 sera:px-3 text-left align-middle sera:text-xs font-medium sera:tracking-wider whitespace-nowrap text-foreground sera:text-muted-foreground sera:uppercase [&:has([role=checkbox])]:pr-0",
         className
       )}
       {...props}
@@ -81,7 +81,7 @@ function TableCell({ className, ...props }: React.ComponentProps<"td">) {
     <td
       data-slot="table-cell"
       className={cn(
-        "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0",
+        "p-2 maia:p-3 luma:p-3 sera:p-3 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0",
         className
       )}
       {...props}
@@ -96,7 +96,7 @@ function TableCaption({
   return (
     <caption
       data-slot="table-caption"
-      className={cn("mt-4 text-sm text-muted-foreground", className)}
+      className={cn("mt-4 text-sm lyra:text-xs mira:text-xs text-muted-foreground", className)}
       {...props}
     />
   )

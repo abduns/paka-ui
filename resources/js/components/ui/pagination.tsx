@@ -24,7 +24,7 @@ function PaginationContent({
   return (
     <ul
       data-slot="pagination-content"
-      className={cn("flex items-center gap-0.5", className)}
+      className={cn("flex items-center gap-0.5 vega:gap-1 maia:gap-1 luma:gap-1 sera:gap-1 rhea:gap-1", className)}
       {...props}
     />
   )
@@ -75,7 +75,7 @@ function PaginationPrevious({
     <PaginationLink
       aria-label="Go to previous page"
       size="default"
-      className={cn("pl-1.5!", className)}
+      className={cn("pl-1.5! vega:pl-2! maia:pl-2! mira:pl-2! luma:pl-2! sera:pl-2!", className)}
       {...props}
     >
       <HugeiconsIcon icon={ArrowLeft01Icon} strokeWidth={2} data-icon="inline-start" />
@@ -93,7 +93,7 @@ function PaginationNext({
     <PaginationLink
       aria-label="Go to next page"
       size="default"
-      className={cn("pr-1.5!", className)}
+      className={cn("pr-1.5! vega:pr-2! maia:pr-2! mira:pr-2! luma:pr-2! sera:pr-2!", className)}
       {...props}
     >
       <span className="hidden sm:block">{text}</span>
@@ -111,7 +111,7 @@ function PaginationEllipsis({
       aria-hidden
       data-slot="pagination-ellipsis"
       className={cn(
-        "flex size-8 items-center justify-center [&_svg:not([class*='size-'])]:size-4",
+        "flex size-8 vega:size-9 maia:size-9 mira:size-7 luma:size-9 sera:size-9 items-center justify-center [&_svg:not([class*='size-'])]:size-4 mira:[&_svg:not([class*='size-'])]:size-3.5",
         className
       )}
       {...props}

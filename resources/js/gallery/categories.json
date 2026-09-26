@@ -1,0 +1,218 @@
+[
+    {
+        "slug": "accordion",
+        "name": "Accordion",
+        "description": "Vertically stacked sections that expand one at a time or together."
+    },
+    {
+        "slug": "alert",
+        "name": "Alert",
+        "description": "Inline callouts for status, warnings, and contextual messages."
+    },
+    {
+        "slug": "alert-dialog",
+        "name": "Alert Dialog",
+        "description": "Modal confirmations that interrupt the user with a decision."
+    },
+    {
+        "slug": "avatar",
+        "name": "Avatar",
+        "description": "Profile images with fallbacks, sizes, and stacked groups."
+    },
+    {
+        "slug": "badge",
+        "name": "Badge",
+        "description": "Compact labels for status, counts, and categories."
+    },
+    {
+        "slug": "breadcrumb",
+        "name": "Breadcrumb",
+        "description": "Hierarchical navigation trails with separators and overflow."
+    },
+    {
+        "slug": "button",
+        "name": "Button",
+        "description": "Actions in every variant, size, and loading state."
+    },
+    {
+        "slug": "button-group",
+        "name": "Button Group",
+        "description": "Related actions joined into a single control."
+    },
+    {
+        "slug": "calendar",
+        "name": "Calendar",
+        "description": "Single, multiple, and range date selection."
+    },
+    {
+        "slug": "card",
+        "name": "Card",
+        "description": "Surfaces that group related content and actions."
+    },
+    {
+        "slug": "chart",
+        "name": "Chart",
+        "description": "Area, bar, line, and pie charts built on Recharts."
+    },
+    {
+        "slug": "checkbox",
+        "name": "Checkbox",
+        "description": "Binary and indeterminate selections, alone or in groups."
+    },
+    {
+        "slug": "collapsible",
+        "name": "Collapsible",
+        "description": "Show and hide a region behind a trigger."
+    },
+    {
+        "slug": "combobox",
+        "name": "Combobox",
+        "description": "Searchable selects with single and multiple values."
+    },
+    {
+        "slug": "command",
+        "name": "Command",
+        "description": "Command palettes and keyboard-driven menus."
+    },
+    {
+        "slug": "dialog",
+        "name": "Dialog",
+        "description": "Modal windows for forms, details, and confirmations."
+    },
+    {
+        "slug": "dropdown-menu",
+        "name": "Dropdown Menu",
+        "description": "Contextual menus with groups, shortcuts, and submenus."
+    },
+    {
+        "slug": "empty",
+        "name": "Empty",
+        "description": "Friendly empty states with a next step."
+    },
+    {
+        "slug": "field",
+        "name": "Field",
+        "description": "Form layout primitives: labels, descriptions, and errors."
+    },
+    {
+        "slug": "hover-card",
+        "name": "Hover Card",
+        "description": "Rich previews revealed on hover or focus."
+    },
+    {
+        "slug": "input",
+        "name": "Input",
+        "description": "Text inputs with types, states, and adornments."
+    },
+    {
+        "slug": "input-group",
+        "name": "Input Group",
+        "description": "Inputs with attached icons, text, and buttons."
+    },
+    {
+        "slug": "input-otp",
+        "name": "Input OTP",
+        "description": "One-time passcode entry with separators and patterns."
+    },
+    { "slug": "kbd", "name": "Kbd", "description": "Keyboard shortcut hints." },
+    {
+        "slug": "label",
+        "name": "Label",
+        "description": "Accessible captions for form controls."
+    },
+    {
+        "slug": "navigation-menu",
+        "name": "Navigation Menu",
+        "description": "Site navigation with flyout panels."
+    },
+    {
+        "slug": "pagination",
+        "name": "Pagination",
+        "description": "Page navigation for long lists and tables."
+    },
+    {
+        "slug": "popover",
+        "name": "Popover",
+        "description": "Floating panels anchored to a trigger."
+    },
+    {
+        "slug": "progress",
+        "name": "Progress",
+        "description": "Determinate progress bars with labels."
+    },
+    {
+        "slug": "radio-group",
+        "name": "Radio Group",
+        "description": "Choose exactly one option from a set."
+    },
+    {
+        "slug": "select",
+        "name": "Select",
+        "description": "Native-feeling dropdown selects with groups."
+    },
+    {
+        "slug": "separator",
+        "name": "Separator",
+        "description": "Horizontal and vertical dividers."
+    },
+    {
+        "slug": "sheet",
+        "name": "Sheet",
+        "description": "Side panels that slide in from any edge."
+    },
+    {
+        "slug": "skeleton",
+        "name": "Skeleton",
+        "description": "Loading placeholders that mirror the final layout."
+    },
+    {
+        "slug": "slider",
+        "name": "Slider",
+        "description": "Single and range value sliders."
+    },
+    {
+        "slug": "sonner",
+        "name": "Toast",
+        "description": "Transient notifications with actions and status."
+    },
+    {
+        "slug": "spinner",
+        "name": "Spinner",
+        "description": "Indeterminate loading indicators."
+    },
+    {
+        "slug": "switch",
+        "name": "Switch",
+        "description": "On and off toggles with labels."
+    },
+    {
+        "slug": "table",
+        "name": "Table",
+        "description": "Data tables with headers, footers, and captions."
+    },
+    {
+        "slug": "tabs",
+        "name": "Tabs",
+        "description": "Switch between views with default, line, and sliding styles."
+    },
+    {
+        "slug": "textarea",
+        "name": "Textarea",
+        "description": "Multi-line text entry."
+    },
+    {
+        "slug": "toggle",
+        "name": "Toggle",
+        "description": "Two-state buttons for formatting and filters."
+    },
+    {
+        "slug": "toggle-group",
+        "name": "Toggle Group",
+        "description": "Single or multiple selection from a row of toggles."
+    },
+    {
+        "slug": "tooltip",
+        "name": "Tooltip",
+        "description": "Short hints on hover and focus."
+    }
+]

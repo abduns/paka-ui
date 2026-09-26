@@ -22,7 +22,7 @@ function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
     <ol
       data-slot="breadcrumb-list"
       className={cn(
-        "flex min-w-0 max-w-full flex-wrap items-center gap-1.5 text-xs wrap-break-word text-muted-foreground sm:gap-2",
+        "flex min-w-0 max-w-full flex-wrap items-center gap-1.5 text-xs vega:text-sm nova:text-sm maia:text-sm mira:text-xs/relaxed luma:text-sm sera:tracking-wide sera:uppercase rhea:text-sm wrap-break-word text-muted-foreground sm:gap-2 vega:sm:gap-2.5 nova:sm:gap-1.5 maia:sm:gap-2.5 lyra:sm:gap-1.5 mira:sm:gap-1.5 luma:sm:gap-2.5 sera:sm:gap-2.5 rhea:sm:gap-2.5",
         className
       )}
       {...props}
@@ -34,7 +34,7 @@ function BreadcrumbItem({ className, ...props }: React.ComponentProps<"li">) {
   return (
     <li
       data-slot="breadcrumb-item"
-      className={cn("inline-flex min-w-0 items-center gap-1.5", className)}
+      className={cn("inline-flex min-w-0 items-center gap-1.5 nova:gap-1 lyra:gap-1 mira:gap-1", className)}
       {...props}
     />
   )
@@ -107,7 +107,7 @@ function BreadcrumbEllipsis({
       role="presentation"
       aria-hidden="true"
       className={cn(
-        "flex size-5 items-center justify-center text-muted-foreground/70 [&>svg]:size-4",
+        "flex size-5 mira:size-4 items-center justify-center text-muted-foreground/70 [&>svg]:size-4 mira:[&>svg]:size-3.5",
         className
       )}
       {...props}

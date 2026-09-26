@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "group/badge inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md px-2 py-1 text-xs font-medium whitespace-nowrap inset-ring transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring/50 has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 aria-invalid:text-destructive aria-invalid:inset-ring-destructive/20 [&>svg]:pointer-events-none [&>svg]:size-3!",
+  "group/badge inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md px-2 py-1 text-xs font-medium whitespace-nowrap inset-ring transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring/50 has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 aria-invalid:text-destructive aria-invalid:inset-ring-destructive/20 [&>svg]:pointer-events-none [&>svg]:size-3! vega:h-5 vega:rounded-4xl vega:py-0.5 nova:h-5 nova:rounded-4xl nova:py-0.5 maia:h-5 maia:rounded-4xl maia:py-0.5 lyra:rounded-none mira:h-5 mira:rounded-full mira:py-0.5 mira:text-[0.625rem] mira:[&>svg]:size-2.5! luma:h-5 luma:rounded-3xl luma:py-0.5 sera:gap-1.5 sera:rounded-none sera:bg-transparent sera:inset-ring-0 sera:px-0 sera:py-0 sera:text-[0.625rem] sera:font-semibold sera:tracking-widest sera:uppercase sera:hover:bg-transparent sera:has-data-[icon=inline-end]:pr-0 sera:has-data-[icon=inline-start]:pl-0 sera:[a]:hover:bg-transparent sera:dark:bg-transparent sera:dark:hover:bg-transparent sera:dark:[a]:hover:bg-transparent rhea:h-5 rhea:rounded-2xl rhea:py-0.5",
   {
     variants: {
       variant: {

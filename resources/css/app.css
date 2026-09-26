@@ -11,6 +11,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* shadcn/create styles. The active style is set as `data-style` on <html> by
+   the preset store (resources/js/themes), so these variants also reach content
+   rendered in portals. Components keep their base classes and add
+   `nova:`, `luma:`… classes only where a style's registry code differs. */
+@custom-variant nova (&:where([data-style='nova'], [data-style='nova'] *));
+@custom-variant vega (&:where([data-style='vega'], [data-style='vega'] *));
+@custom-variant maia (&:where([data-style='maia'], [data-style='maia'] *));
+@custom-variant lyra (&:where([data-style='lyra'], [data-style='lyra'] *));
+@custom-variant mira (&:where([data-style='mira'], [data-style='mira'] *));
+@custom-variant luma (&:where([data-style='luma'], [data-style='luma'] *));
+@custom-variant sera (&:where([data-style='sera'], [data-style='sera'] *));
+@custom-variant rhea (&:where([data-style='rhea'], [data-style='rhea'] *));
+
 @theme {
     --font-sans:
         'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
@@ -74,6 +87,14 @@
 }
 
 :root {
+    --paka-ui-font-sans:
+        'Inter Variable', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+    --paka-ui-font-heading: var(--paka-ui-font-sans);
+    --paka-ui-font-mono:
+        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        'Liberation Mono', 'Courier New', monospace;
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
@@ -290,8 +311,11 @@
 }
 
 @theme inline {
-    --font-heading: var(--font-sans);
-    --font-sans: 'Inter Variable', sans-serif;
+    /* Fonts resolve through runtime variables so the preset store can swap
+       them without a rebuild (see resources/js/themes/fonts.ts). */
+    --font-sans: var(--paka-ui-font-sans);
+    --font-heading: var(--paka-ui-font-heading);
+    --font-mono: var(--paka-ui-font-mono);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-indicator-hover: var(--sidebar-indicator-hover);
@@ -337,4 +361,85 @@
     --radius-2xl: calc(var(--radius) * 1.8);
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer components {
+    .paka-page {
+        font-family: var(--paka-font-body);
+        color: var(--foreground);
+        background: var(--background);
+        overflow-wrap: anywhere;
+    }
+
+    .paka-page :where(h1, h2, h3) {
+        font-family: var(--paka-font-heading);
+    }
+
+    .paka-page :where(a, button, pre):focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 5px;
+    }
+
+    .paka-container {
+        width: min(calc(100% - 3rem), var(--paka-container));
+        margin-inline: auto;
+    }
+
+    .paka-section {
+        padding-block: var(--paka-section);
+    }
+
+    .paka-eyebrow {
+        font-size: 0.6875rem;
+        line-height: 1.6;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--primary);
+    }
+
+    .paka-hero-heading {
+        font-size: var(--paka-text-hero);
+        line-height: 1.06;
+        letter-spacing: -0.055em;
+        font-weight: 500;
+        text-wrap: balance;
+    }
+
+    .paka-heading {
+        font-size: var(--paka-text-heading);
+        line-height: 1.14;
+        letter-spacing: -0.045em;
+        font-weight: 500;
+        text-wrap: balance;
+    }
+
+    .paka-hero-visual {
+        background-image: radial-gradient(var(--border) 1px, transparent 1px);
+        background-size: 12px 12px;
+    }
+
+    .paka-page [data-slot='button'] {
+        border-radius: var(--radius);
+    }
+
+    .paka-page [data-slot='card'] {
+        border-radius: calc(var(--radius) + 4px);
+    }
+
+    .paka-skip-link {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 10;
+        padding: 0.75rem 1rem;
+        color: var(--primary-foreground);
+        background: var(--primary);
+        border-radius: var(--radius);
+        transform: translateY(-200%);
+    }
+
+    .paka-skip-link:focus {
+        transform: translateY(0);
+    }
 }

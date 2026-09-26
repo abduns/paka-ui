@@ -246,7 +246,7 @@ function Sidebar({
         <div
           data-sidebar="sidebar"
           data-slot="sidebar-inner"
-          className="relative flex size-full grainy flex-col bg-muted/50 group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:shadow-sm group-data-[variant=floating]:ring-1 group-data-[variant=floating]:ring-sidebar-border"
+          className="relative flex size-full grainy flex-col bg-muted/50 group-data-[variant=floating]:rounded-lg lyra:group-data-[variant=floating]:rounded-none luma:group-data-[variant=floating]:rounded-2xl sera:group-data-[variant=floating]:rounded-none rhea:group-data-[variant=floating]:rounded-2xl group-data-[variant=floating]:shadow-sm group-data-[variant=floating]:ring-1 group-data-[variant=floating]:ring-sidebar-border"
         >
           {children}
         </div>
@@ -315,7 +315,7 @@ function SidebarInset({ className, ...props }: React.ComponentProps<"main">) {
     <main
       data-slot="sidebar-inset"
       className={cn(
-        "relative flex w-full flex-1 flex-col bg-background md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2",
+        "relative flex w-full flex-1 flex-col bg-background md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl lyra:md:peer-data-[variant=inset]:rounded-none luma:md:peer-data-[variant=inset]:rounded-2xl sera:md:peer-data-[variant=inset]:rounded-none rhea:md:peer-data-[variant=inset]:rounded-2xl md:peer-data-[variant=inset]:shadow-sm md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2",
         className
       )}
       {...props}
@@ -331,7 +331,7 @@ function SidebarInput({
     <Input
       data-slot="sidebar-input"
       data-sidebar="input"
-      className={cn("h-8 w-full bg-background shadow-none", className)}
+      className={cn("h-8 w-full bg-background mira:border-input mira:bg-muted/20 mira:dark:bg-muted/30 luma:bg-input/50 sera:border-input sera:bg-transparent rhea:bg-input/50 shadow-none", className)}
       {...props}
     />
   )
@@ -342,7 +342,7 @@ function SidebarHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-header"
       data-sidebar="header"
-      className={cn("flex flex-col gap-2 p-2", className)}
+      className={cn("flex flex-col gap-2 p-2 maia:[--radius:var(--radius-xl)] luma:[--radius:var(--radius-xl)] sera:[--radius:0] rhea:[--radius:var(--radius-xl)]", className)}
       {...props}
     />
   )
@@ -488,7 +488,7 @@ function SidebarContent({
       data-slot="sidebar-content"
       data-sidebar="content"
       className={cn(
-        "no-scrollbar relative flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden",
+        "no-scrollbar relative flex min-h-0 flex-1 flex-col gap-2 overflow-auto nova:gap-0 lyra:gap-0 mira:gap-0 maia:[--radius:var(--radius-xl)] luma:[--radius:var(--radius-xl)] sera:[--radius:0] rhea:[--radius:var(--radius-xl)] group-data-[collapsible=icon]:overflow-hidden",
         className
       )}
       {...props}
@@ -504,7 +504,7 @@ function SidebarGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-group"
       data-sidebar="group"
-      className={cn("relative flex w-full min-w-0 flex-col p-2", className)}
+      className={cn("relative flex w-full min-w-0 flex-col p-2 mira:px-2 mira:py-1", className)}
       {...props}
     />
   )
@@ -520,7 +520,7 @@ function SidebarGroupLabel({
     props: mergeProps<"div">(
       {
         className: cn(
-          "flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium text-sidebar-foreground/70 ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
+          "flex h-8 shrink-0 items-center rounded-md lyra:rounded-none luma:rounded-xl sera:rounded-none rhea:rounded-xl px-2 maia:px-3 luma:px-3 sera:px-3 rhea:px-3 text-xs font-medium lyra:font-normal mira:font-normal sera:font-semibold sera:tracking-wider sera:uppercase text-sidebar-foreground/70 ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 focus-visible:ring-2 rhea:focus-visible:ring-3 [&>svg]:size-4 sera:[&>svg]:size-3.5 [&>svg]:shrink-0",
           className
         ),
       },
@@ -544,7 +544,7 @@ function SidebarGroupAction({
     props: mergeProps<"button">(
       {
         className: cn(
-          "absolute top-3.5 right-3 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground ring-sidebar-ring outline-hidden transition-transform group-data-[collapsible=icon]:hidden after:absolute after:-inset-2 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 md:after:hidden [&>svg]:size-4 [&>svg]:shrink-0",
+          "absolute top-3.5 right-3 flex aspect-square w-5 items-center justify-center rounded-md lyra:rounded-none luma:rounded-xl sera:rounded-none rhea:rounded-xl p-0 text-sidebar-foreground ring-sidebar-ring outline-hidden transition-transform group-data-[collapsible=icon]:hidden after:absolute after:-inset-2 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 rhea:focus-visible:ring-3 md:after:hidden [&>svg]:size-4 sera:[&>svg]:size-3.5 [&>svg]:shrink-0",
           className
         ),
       },
@@ -566,7 +566,7 @@ function SidebarGroupContent({
     <div
       data-slot="sidebar-group-content"
       data-sidebar="group-content"
-      className={cn("w-full text-sm", className)}
+      className={cn("w-full text-sm lyra:text-xs mira:text-xs", className)}
       {...props}
     />
   )
@@ -577,7 +577,7 @@ function SidebarMenu({ className, ...props }: React.ComponentProps<"ul">) {
     <ul
       data-slot="sidebar-menu"
       data-sidebar="menu"
-      className={cn("flex w-full min-w-0 flex-col gap-1", className)}
+      className={cn("flex w-full min-w-0 flex-col gap-1 nova:gap-0 lyra:gap-0 mira:gap-px luma:gap-0.5 sera:gap-0.5 rhea:gap-0.5", className)}
       {...props}
     />
   )
@@ -599,7 +599,7 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
 }
 
 const sidebarMenuButtonVariants = cva(
-  "peer/menu-button group/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-open:hover:bg-sidebar-accent data-open:hover:text-sidebar-accent-foreground data-active:bg-sidebar-active data-active:font-medium data-active:text-sidebar-active-foreground [&_svg]:size-4 [&_svg]:shrink-0 [&>span:last-child]:truncate",
+  "peer/menu-button group/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md maia:rounded-lg lyra:rounded-none mira:rounded-[calc(var(--radius-sm)+2px)] luma:rounded-xl sera:rounded-none rhea:rounded-xl p-2 maia:px-3 luma:px-3 sera:px-3 rhea:px-3 text-left text-sm lyra:text-xs mira:text-xs rhea:whitespace-nowrap ring-sidebar-ring outline-hidden transition-[width,height,padding] rhea:duration-200 group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 rhea:focus-visible:ring-3 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 rhea:has-[>svg:first-child]:pl-2.5 rhea:has-[>svg:last-child]:pr-2.5 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-open:hover:bg-sidebar-accent data-open:hover:text-sidebar-accent-foreground data-active:bg-sidebar-active data-active:font-medium data-active:text-sidebar-active-foreground [&_svg]:size-4 [&_svg]:shrink-0 [&>span:last-child]:truncate",
   {
     variants: {
       variant: {
@@ -610,9 +610,9 @@ const sidebarMenuButtonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] hover:text-secondary-foreground active:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_8%)] active:text-secondary-foreground",
       },
       size: {
-        default: "h-8 text-sm",
-        sm: "h-7 text-xs",
-        lg: "h-12 text-sm group-data-[collapsible=icon]:p-0!",
+        default: "h-8 maia:h-9 luma:h-9 sera:h-9 text-sm lyra:text-xs mira:text-xs",
+        sm: "h-7 maia:h-8 luma:h-8 sera:h-8 text-xs",
+        lg: "h-12 maia:h-14 luma:h-14 sera:h-14 maia:px-3 luma:px-3 sera:px-3 rhea:px-3 text-sm lyra:text-xs mira:text-xs group-data-[collapsible=icon]:p-0!",
       },
     },
     defaultVariants: {
@@ -690,7 +690,7 @@ function SidebarMenuAction({
     props: mergeProps<"button">(
       {
         className: cn(
-          "absolute top-1.5 right-1 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground ring-sidebar-ring outline-hidden transition-transform group-data-[collapsible=icon]:hidden peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[size=default]/menu-button:top-1.5 peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=sm]/menu-button:top-1 after:absolute after:-inset-2 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 md:after:hidden [&>svg]:size-4 [&>svg]:shrink-0",
+          "absolute top-1.5 right-1 flex aspect-square w-5 items-center justify-center rounded-md lyra:rounded-none mira:rounded-[calc(var(--radius-sm)-2px)] luma:rounded-xl sera:rounded-none rhea:rounded-xl p-0 text-sidebar-foreground ring-sidebar-ring outline-hidden transition-transform group-data-[collapsible=icon]:hidden peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[size=default]/menu-button:top-1.5 maia:peer-data-[size=default]/menu-button:top-2 luma:peer-data-[size=default]/menu-button:top-2 sera:peer-data-[size=default]/menu-button:top-2 peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=sm]/menu-button:top-1 after:absolute after:-inset-2 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 rhea:focus-visible:ring-3 md:after:hidden [&>svg]:size-4 sera:[&>svg]:size-3.5 [&>svg]:shrink-0",
           showOnHover &&
             "group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 peer-data-active/menu-button:text-sidebar-accent-foreground aria-expanded:opacity-100 md:opacity-0",
           className
@@ -715,7 +715,7 @@ function SidebarMenuBadge({
       data-slot="sidebar-menu-badge"
       data-sidebar="menu-badge"
       className={cn(
-        "pointer-events-none absolute right-1 flex h-5 min-w-5 items-center justify-center rounded-md px-1 text-xs font-medium text-sidebar-foreground tabular-nums select-none group-data-[collapsible=icon]:hidden peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[size=default]/menu-button:top-1.5 peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=sm]/menu-button:top-1 peer-data-active/menu-button:text-sidebar-accent-foreground",
+        "pointer-events-none absolute right-1 flex h-5 min-w-5 items-center justify-center rounded-md lyra:rounded-none mira:rounded-[calc(var(--radius-sm)-2px)] luma:rounded-xl sera:rounded-none rhea:rounded-xl px-1 text-xs font-medium text-sidebar-foreground tabular-nums select-none group-data-[collapsible=icon]:hidden peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[size=default]/menu-button:top-1.5 peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=sm]/menu-button:top-1 peer-data-active/menu-button:text-sidebar-accent-foreground",
         className
       )}
       {...props}
@@ -739,12 +739,12 @@ function SidebarMenuSkeleton({
     <div
       data-slot="sidebar-menu-skeleton"
       data-sidebar="menu-skeleton"
-      className={cn("flex h-8 items-center gap-2 rounded-md px-2", className)}
+      className={cn("flex h-8 items-center gap-2 rounded-md lyra:rounded-none luma:rounded-xl sera:rounded-none rhea:rounded-xl px-2", className)}
       {...props}
     >
       {showIcon && (
         <Skeleton
-          className="size-4 rounded-md"
+          className="size-4 sera:size-3.5 rounded-md lyra:rounded-none luma:rounded-xl sera:rounded-none rhea:rounded-xl"
           data-sidebar="menu-skeleton-icon"
         />
       )}
@@ -809,7 +809,7 @@ function SidebarMenuSubButton({
     props: mergeProps<"a">(
       {
         className: cn(
-          "flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-md px-2 text-sidebar-foreground ring-sidebar-ring outline-hidden group-data-[collapsible=icon]:hidden hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[size=md]:text-sm data-[size=sm]:text-xs data-active:bg-sidebar-active data-active:font-medium data-active:text-sidebar-active-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:text-sidebar-accent-foreground",
+          "flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-md lyra:rounded-none luma:rounded-xl sera:rounded-none rhea:rounded-xl px-2 luma:px-3 sera:px-3 rhea:px-3 text-sidebar-foreground ring-sidebar-ring outline-hidden group-data-[collapsible=icon]:hidden hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 rhea:focus-visible:ring-3 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[size=md]:text-sm lyra:data-[size=md]:text-xs mira:data-[size=md]:text-xs data-[size=sm]:text-xs data-active:bg-sidebar-active data-active:font-medium data-active:text-sidebar-active-foreground [&>span:last-child]:truncate [&>svg]:size-4 sera:[&>svg]:size-3.5 [&>svg]:shrink-0 [&>svg]:text-sidebar-accent-foreground",
           className
         ),
       },

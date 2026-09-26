@@ -1,0 +1,147 @@
+{
+    "schemaVersion": 1,
+    "theme": "default",
+    "title": "Fieldwork — a little closer to the outside",
+    "description": "A fictional retreat studio, built with the same six Paka blocks and a different set of theme tokens.",
+    "themeTokens": {
+        "background": "#fbf7f0",
+        "foreground": "#382b25",
+        "primary": "#85452c",
+        "primaryForeground": "#ffffff",
+        "muted": "#f0e9dd",
+        "mutedForeground": "#6f6055",
+        "accent": "#eedac1",
+        "accentForeground": "#603721",
+        "card": "#fffdf8",
+        "border": "#e1d5c5",
+        "headingFont": "serif",
+        "radius": 6,
+        "containerWidth": 1160,
+        "sectionSpacing": 120
+    },
+    "sections": [
+        {
+            "id": "top",
+            "type": "navbar.simple",
+            "props": {
+                "brand": "fieldwork",
+                "homeHref": "#top",
+                "links": [
+                    { "label": "The experience", "href": "#experience" },
+                    { "label": "Guest stories", "href": "#stories" }
+                ],
+                "action": { "label": "Plan your stay", "href": "#visit" }
+            }
+        },
+        {
+            "id": "welcome",
+            "type": "hero.split",
+            "props": {
+                "eyebrow": "Small stays. Wide-open days.",
+                "heading": "Come back to a slower kind of day.",
+                "description": "Unhurried mornings, long tables, and a path that leads somewhere green. Thoughtful countryside retreats for people who need a little room to breathe.",
+                "primaryAction": {
+                    "label": "Find your little escape",
+                    "href": "#visit"
+                },
+                "visual": {
+                    "label": "A day at Fieldwork",
+                    "title": "There is no rush here.",
+                    "items": [
+                        {
+                            "title": "Coffee, with the sunrise",
+                            "description": "Something warm. Nowhere to be.",
+                            "tag": "08:00 · Ease into the day"
+                        },
+                        {
+                            "title": "Take the longer way",
+                            "description": "A trail through the trees, just for you.",
+                            "tag": "11:00 · Wander a little"
+                        },
+                        {
+                            "title": "Pull up a chair",
+                            "description": "Seasonal food and good company.",
+                            "tag": "18:00 · Gather around"
+                        }
+                    ],
+                    "caption": "An imagined itinerary. Yours can look entirely different."
+                }
+            }
+        },
+        {
+            "id": "experience",
+            "type": "features.grid",
+            "props": {
+                "eyebrow": "The simple things, done well",
+                "heading": "A little closer to the outside.",
+                "items": [
+                    {
+                        "title": "Space to switch off",
+                        "description": "Considered rooms, soft linen, and a view worth looking up for. Everything you need for a proper pause."
+                    },
+                    {
+                        "title": "Food from nearby",
+                        "description": "Long lunches, seasonal ingredients, and meals made to share. The best conversations happen around a table."
+                    },
+                    {
+                        "title": "Your own kind of adventure",
+                        "description": "Follow a trail, try something new, or settle in with a book. There is no right way to spend your day."
+                    }
+                ]
+            }
+        },
+        {
+            "id": "stories",
+            "type": "testimonials.grid",
+            "props": {
+                "eyebrow": "Postcards from a slower life",
+                "heading": "Some things stay with you.",
+                "description": "Imagined guest stories for this example retreat.",
+                "items": [
+                    {
+                        "quote": "I arrived with a full to-do list in my head. By the second morning, all I could think about was where to take my coffee.",
+                        "name": "Ella Thompson"
+                    },
+                    {
+                        "quote": "The kind of place that reminds you a good weekend does not need an itinerary. We are already dreaming about going back.",
+                        "name": "Ravi & Leila"
+                    },
+                    {
+                        "quote": "Thoughtful in all the small ways. The food, the quiet, the feeling that someone has made room just for you.",
+                        "name": "Oliver Bennett"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "visit",
+            "type": "cta.banner",
+            "props": {
+                "eyebrow": "Leave a little space in your calendar",
+                "heading": "The countryside is calling.",
+                "description": "A weekend for two, a gathering of friends, or some time all to yourself. Tell us what you have in mind.",
+                "primaryAction": {
+                    "label": "Let’s plan your stay",
+                    "href": "mailto:fieldwork@example.com"
+                }
+            }
+        },
+        {
+            "id": "goodbye",
+            "type": "footer.simple",
+            "props": {
+                "brand": "fieldwork",
+                "homeHref": "#top",
+                "description": "Good days begin a little closer to nature.",
+                "links": [
+                    { "label": "The experience", "href": "#experience" },
+                    {
+                        "label": "Write to us",
+                        "href": "mailto:fieldwork@example.com"
+                    }
+                ],
+                "copyright": "© 2026 Fieldwork. A fictional Paka demo; quotes are illustrative."
+            }
+        }
+    ]
+}

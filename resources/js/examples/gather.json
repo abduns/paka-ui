@@ -1,0 +1,146 @@
+{
+    "schemaVersion": 1,
+    "theme": "default",
+    "title": "Gather — make room for your best work",
+    "description": "A fictional team-planning product, built from six reusable Paka blocks.",
+    "sections": [
+        {
+            "id": "top",
+            "type": "navbar.simple",
+            "props": {
+                "brand": "gather",
+                "homeHref": "#top",
+                "links": [
+                    { "label": "Why Gather", "href": "#features" },
+                    { "label": "Kind words", "href": "#testimonials" }
+                ],
+                "action": { "label": "Let’s talk", "href": "#contact" }
+            }
+        },
+        {
+            "id": "hero",
+            "type": "hero.split",
+            "props": {
+                "eyebrow": "For the beautifully busy teams",
+                "heading": "Good work starts with a little space.",
+                "description": "Less chasing updates. More bringing ideas to life. Gather is a calm, shared home for your team’s plans, projects, and everyday progress.",
+                "primaryAction": {
+                    "label": "Find your focus",
+                    "href": "#contact"
+                },
+                "secondaryAction": {
+                    "label": "Explore Gather",
+                    "href": "#features"
+                },
+                "note": "Made for small teams with big things in mind.",
+                "visual": {
+                    "label": "This week at a glance",
+                    "title": "Make space for what matters.",
+                    "items": [
+                        {
+                            "title": "The next big idea",
+                            "description": "A shared plan, a clear direction.",
+                            "tag": "Monday · Plan together"
+                        },
+                        {
+                            "title": "A little room to focus",
+                            "description": "Good work, without the interruptions.",
+                            "tag": "Tuesday · Find your flow"
+                        },
+                        {
+                            "title": "Look how far you’ve come",
+                            "description": "Small wins are still wins.",
+                            "tag": "Friday · Celebrate progress"
+                        }
+                    ],
+                    "metric": {
+                        "value": "Less noise.",
+                        "label": "More of the work you love doing."
+                    },
+                    "caption": "A sample week. A whole new rhythm."
+                }
+            }
+        },
+        {
+            "id": "features",
+            "type": "features.grid",
+            "props": {
+                "eyebrow": "Thoughtful by default",
+                "heading": "Everything in its right place.",
+                "description": "Just enough structure to bring you together. Enough freedom to do things your way.",
+                "items": [
+                    {
+                        "title": "A plan everyone can see",
+                        "description": "Turn the big picture into clear next steps. Give every project a home and every teammate a sense of direction."
+                    },
+                    {
+                        "title": "Conversations with context",
+                        "description": "Keep decisions and feedback close to the work. Pick up where you left off, without searching through a sea of messages."
+                    },
+                    {
+                        "title": "Progress at a human pace",
+                        "description": "Share an update when it makes sense. Protect your focus, celebrate small wins, and leave room for life outside work."
+                    }
+                ]
+            }
+        },
+        {
+            "id": "testimonials",
+            "type": "testimonials.grid",
+            "props": {
+                "eyebrow": "In good company",
+                "heading": "A lighter way to work together.",
+                "description": "Illustrative stories from the kinds of teams Gather is made for.",
+                "items": [
+                    {
+                        "quote": "Our Monday meeting used to be a status report. Now it is a conversation about what we want to make next.",
+                        "name": "Maya Chen",
+                        "role": "Co-founder · Example design studio"
+                    },
+                    {
+                        "quote": "Finally, a place for the whole picture. We spend less time finding things and more time making them better.",
+                        "name": "Theo Williams",
+                        "role": "Product lead · Example startup"
+                    },
+                    {
+                        "quote": "It feels like someone cleared a space on our desks. Simple, considered, and a pleasure to come back to.",
+                        "name": "Amara Okafor",
+                        "role": "Creative director · Example agency"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "contact",
+            "type": "cta.banner",
+            "props": {
+                "eyebrow": "Make a little room",
+                "heading": "Your best work is still ahead.",
+                "description": "Tell us about your team. Let’s find a calmer way to bring your next idea to life.",
+                "primaryAction": {
+                    "label": "Say hello to Gather",
+                    "href": "mailto:gather@example.com"
+                },
+                "note": "A conversation, without the sales pitch."
+            }
+        },
+        {
+            "id": "footer",
+            "type": "footer.simple",
+            "props": {
+                "brand": "gather",
+                "homeHref": "#top",
+                "description": "A little less busy. A lot more together.",
+                "links": [
+                    { "label": "Our approach", "href": "#features" },
+                    { "label": "Kind words", "href": "#testimonials" },
+                    {
+                        "label": "Get in touch",
+                        "href": "mailto:gather@example.com"
+                    }
+                ],
+                "copyright": "© 2026 Gather. A fictional Paka demo; quotes are illustrative."
+            }
+        }
+    ]
+}

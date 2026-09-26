@@ -2,21 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Responses\Concerns\RedirectsToCurrentWorkspace;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class HomeController extends Controller
 {
-    use RedirectsToCurrentWorkspace;
-
     /**
-     * Send the root URL straight to the current workspace's dashboard.
+     * The component gallery is the public front door of Paka UI.
      */
-    public function __invoke(Request $request): RedirectResponse
+    public function __invoke(): Response
     {
-        return redirect()->to(
-            $this->redirectPathForCurrentWorkspace($request, config('fortify.home'))
-        );
+        return Inertia::render('gallery/index');
     }
 }

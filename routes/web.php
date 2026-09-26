@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AvatarController;
+use App\Http\Controllers\ComponentGalleryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InstallationController;
+use App\Http\Controllers\PreviewController;
 use App\Http\Controllers\Workspaces\WorkspaceInvitationController;
 use App\Http\Middleware\EnsureInstallationIsPending;
 use App\Http\Middleware\EnsureWorkspaceMembership;
@@ -32,7 +34,27 @@ Route::post('install/system', [InstallationController::class, 'testSystem'])
     ->middleware([EnsureInstallationIsPending::class, 'signed:relative', 'throttle:5,1'])
     ->name('install.system.run');
 
-Route::get('/', HomeController::class)->middleware('auth')->name('home');
+Route::get('/', HomeController::class)->name('home');
+
+Route::prefix('components')->name('components.')->group(function (): void {
+    Route::get('/', [ComponentGalleryController::class, 'index'])->name('index');
+    Route::get('{category}', [ComponentGalleryController::class, 'show'])
+        ->where('category', '[a-z][a-z0-9-]{0,49}')
+        ->name('show');
+});
+
+Route::get('blocks', [PreviewController::class, 'index'])->name('blocks.index');
+
+Route::prefix('preview')->name('preview.')->group(function (): void {
+    Route::get('/', [PreviewController::class, 'index'])->name('index');
+    Route::get('pages/{example}', [PreviewController::class, 'page'])
+        ->whereIn('example', ['gather', 'fieldwork'])
+        ->name('page');
+    Route::get('blocks/{block}', [PreviewController::class, 'block'])
+        ->where('block', '[a-z][a-z0-9.-]{0,99}')
+        ->name('block');
+    Route::get('errors', [PreviewController::class, 'errors'])->name('errors');
+});
 
 Route::get('avatars/{style}/{seed}.svg', AvatarController::class)
     ->whereIn('style', DiceBearAvatarGenerator::STYLES)
