@@ -38,13 +38,11 @@ export function PageRenderer({ config }: { config: unknown }) {
     }
 
     const { sections, themeTokens } = result.data;
-    const first =
-        sections[0]?.type === 'navbar.simple' ? sections[0] : undefined;
-    const last =
-        sections.at(-1)?.type === 'footer.simple' ? sections.at(-1) : undefined;
-    const content = sections.filter(
-        (section) => section !== first && section !== last,
-    );
+    const lastSection = sections.at(-1);
+    const last = lastSection?.type.startsWith('footer.')
+        ? lastSection
+        : undefined;
+    const content = sections.filter((section) => section !== last);
     const renderSection = (section: (typeof sections)[number]) => (
         <div
             id={section.id}
@@ -61,7 +59,6 @@ export function PageRenderer({ config }: { config: unknown }) {
             <a href={`#${mainId}`} className="paka-skip-link">
                 Skip to content
             </a>
-            {first && renderSection(first)}
             <main id={mainId} tabIndex={-1}>
                 {content.map(renderSection)}
             </main>

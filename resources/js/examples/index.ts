@@ -1,18 +1,12 @@
-import fieldwork from '@/examples/fieldwork.json';
-import gather from '@/examples/gather.json';
+import type { PageConfig } from '@/renderer/validate-page';
 
-export const examples = {
-    gather: {
-        name: 'Gather',
-        category: 'A calmer way to work',
-        config: gather,
-    },
-    fieldwork: {
-        name: 'Fieldwork',
-        category: 'A slower kind of stay',
-        config: fieldwork,
-    },
-} as const;
+type PageExample = {
+    name: string;
+    category: string;
+    config: PageConfig;
+};
+
+export const examples: Record<string, PageExample> = {};
 
 export function isExample(name: string): name is keyof typeof examples {
     return Object.hasOwn(examples, name);

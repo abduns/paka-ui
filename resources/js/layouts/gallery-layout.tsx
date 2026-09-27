@@ -113,7 +113,7 @@ export default function GalleryLayout({ children }: { children: ReactNode }) {
     return (
         <div className="flex min-h-svh flex-col bg-background text-foreground">
             <header className="sticky top-0 z-30 border-b border-border bg-background/85 backdrop-blur supports-backdrop-filter:bg-background/70">
-                <div className="mx-auto flex h-14 w-full max-w-[1440px] items-center gap-3 px-4 sm:px-6">
+                <div className="flex h-14 w-full items-center gap-3 px-4 sm:px-6">
                     <Sheet open={navOpen} onOpenChange={setNavOpen}>
                         <SheetTrigger
                             render={
@@ -218,10 +218,10 @@ export default function GalleryLayout({ children }: { children: ReactNode }) {
                     </div>
                 </div>
             </header>
-            <div className="mx-auto flex w-full max-w-[1440px] flex-1">
+            <div className="flex w-full flex-1 items-start">
                 <aside
                     aria-label={customizing ? 'Theme customizer' : 'Categories'}
-                    className="sticky top-14 hidden h-[calc(100svh-3.5rem)] w-72 shrink-0 flex-col overflow-y-auto border-r border-border px-4 py-5 lg:flex"
+                    className="sticky top-14 hidden h-[calc(100svh-3.5rem)] w-72 shrink-0 flex-col self-start overflow-y-auto overscroll-contain border-r border-border px-4 py-5 lg:flex"
                 >
                     {customizing ? (
                         <div className="flex flex-col gap-4">

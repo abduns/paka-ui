@@ -11,6 +11,12 @@ import {
     CardHeader,
     CardTitle,
 } from '@/components/ui/card';
+import {
+    Empty,
+    EmptyHeader,
+    EmptyTitle,
+    EmptyDescription,
+} from '@/components/ui/empty';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { examples } from '@/examples';
@@ -41,107 +47,131 @@ export default function PreviewIndex() {
                         Page blocks
                     </h1>
                     <p className="text-base leading-relaxed text-muted-foreground">
-                        Marketing sections driven by JSON. Preview each block on
-                        its own, then see how they come together in complete
-                        pages.
+                        Reusable sections for building pages.
                     </p>
                 </div>
-                <Tabs defaultValue="components" className="gap-6">
-                    <TabsList variant="line" aria-label="Browse the library">
-                        <TabsTrigger value="components">
-                            Components
-                            <Badge variant="neutral">
-                                {blockEntries.length}
-                            </Badge>
-                        </TabsTrigger>
-                        <TabsTrigger value="examples">
-                            Examples
-                            <Badge variant="neutral">
-                                {Object.keys(examples).length}
-                            </Badge>
-                        </TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="components">
-                        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                            {blockEntries.map(([type, definition]) => (
-                                <Card key={type}>
-                                    <CardHeader>
-                                        <CardTitle>
-                                            <h2>{definition.name}</h2>
-                                        </CardTitle>
-                                        <CardDescription>
-                                            <code className="text-xs">
-                                                {type}
-                                            </code>
-                                        </CardDescription>
-                                    </CardHeader>
-                                    <CardContent className="flex-1">
-                                        <p className="leading-relaxed text-muted-foreground">
-                                            {definition.description}
-                                        </p>
-                                    </CardContent>
-                                    <CardFooter>
-                                        <Button
-                                            variant="outline"
-                                            size="sm"
-                                            render={<Link href={block(type)} />}
-                                            nativeButton={false}
-                                            aria-label={`Preview ${definition.name}`}
-                                        >
-                                            Preview component
-                                            <HugeiconsIcon
-                                                icon={ArrowRight01Icon}
-                                                data-icon="inline-end"
-                                                aria-hidden="true"
-                                            />
-                                        </Button>
-                                    </CardFooter>
-                                </Card>
-                            ))}
-                        </div>
-                    </TabsContent>
-                    <TabsContent value="examples">
-                        <div className="grid gap-5 sm:grid-cols-2">
-                            {Object.entries(examples).map(([key, example]) => (
-                                <Card key={key}>
-                                    <CardHeader>
-                                        <CardTitle>
-                                            <h2>{example.name}</h2>
-                                        </CardTitle>
-                                        <CardDescription>
-                                            {example.category}
-                                        </CardDescription>
-                                    </CardHeader>
-                                    <CardContent className="flex-1">
-                                        <p className="leading-relaxed text-muted-foreground">
-                                            {example.config.description}
-                                        </p>
-                                    </CardContent>
-                                    <CardFooter className="flex-wrap justify-between gap-3">
-                                        <Badge variant="neutral">
-                                            {example.config.sections.length}{' '}
-                                            sections
-                                        </Badge>
-                                        <Button
-                                            variant="outline"
-                                            size="sm"
-                                            render={<Link href={page(key)} />}
-                                            nativeButton={false}
-                                            aria-label={`Preview ${example.name}`}
-                                        >
-                                            Preview page
-                                            <HugeiconsIcon
-                                                icon={ArrowRight01Icon}
-                                                data-icon="inline-end"
-                                                aria-hidden="true"
-                                            />
-                                        </Button>
-                                    </CardFooter>
-                                </Card>
-                            ))}
-                        </div>
-                    </TabsContent>
-                </Tabs>
+                {blockEntries.length === 0 && (
+                    <Empty>
+                        <EmptyHeader>
+                            <EmptyTitle>No blocks yet</EmptyTitle>
+                            <EmptyDescription>
+                                New blocks will appear here when they are added.
+                            </EmptyDescription>
+                        </EmptyHeader>
+                    </Empty>
+                )}
+                {blockEntries.length > 0 && (
+                    <Tabs defaultValue="components" className="gap-6">
+                        <TabsList
+                            variant="line"
+                            aria-label="Browse the library"
+                        >
+                            <TabsTrigger value="components">
+                                Components
+                                <Badge variant="neutral">
+                                    {blockEntries.length}
+                                </Badge>
+                            </TabsTrigger>
+                            <TabsTrigger value="examples">
+                                Examples
+                                <Badge variant="neutral">
+                                    {Object.keys(examples).length}
+                                </Badge>
+                            </TabsTrigger>
+                        </TabsList>
+                        <TabsContent value="components">
+                            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                                {blockEntries.map(([type, definition]) => (
+                                    <Card key={type}>
+                                        <CardHeader>
+                                            <CardTitle>
+                                                <h2>{definition.name}</h2>
+                                            </CardTitle>
+                                            <CardDescription>
+                                                <code className="text-xs">
+                                                    {type}
+                                                </code>
+                                            </CardDescription>
+                                        </CardHeader>
+                                        <CardContent className="flex-1">
+                                            <p className="leading-relaxed text-muted-foreground">
+                                                {definition.description}
+                                            </p>
+                                        </CardContent>
+                                        <CardFooter>
+                                            <Button
+                                                variant="outline"
+                                                size="sm"
+                                                render={
+                                                    <Link href={block(type)} />
+                                                }
+                                                nativeButton={false}
+                                                aria-label={`Preview ${definition.name}`}
+                                            >
+                                                Preview component
+                                                <HugeiconsIcon
+                                                    icon={ArrowRight01Icon}
+                                                    data-icon="inline-end"
+                                                    aria-hidden="true"
+                                                />
+                                            </Button>
+                                        </CardFooter>
+                                    </Card>
+                                ))}
+                            </div>
+                        </TabsContent>
+                        <TabsContent value="examples">
+                            <div className="grid gap-5 sm:grid-cols-2">
+                                {Object.entries(examples).map(
+                                    ([key, example]) => (
+                                        <Card key={key}>
+                                            <CardHeader>
+                                                <CardTitle>
+                                                    <h2>{example.name}</h2>
+                                                </CardTitle>
+                                                <CardDescription>
+                                                    {example.category}
+                                                </CardDescription>
+                                            </CardHeader>
+                                            <CardContent className="flex-1">
+                                                <p className="leading-relaxed text-muted-foreground">
+                                                    {example.config.description}
+                                                </p>
+                                            </CardContent>
+                                            <CardFooter className="flex-wrap justify-between gap-3">
+                                                <Badge variant="neutral">
+                                                    {
+                                                        example.config.sections
+                                                            .length
+                                                    }{' '}
+                                                    sections
+                                                </Badge>
+                                                <Button
+                                                    variant="outline"
+                                                    size="sm"
+                                                    render={
+                                                        <Link
+                                                            href={page(key)}
+                                                        />
+                                                    }
+                                                    nativeButton={false}
+                                                    aria-label={`Preview ${example.name}`}
+                                                >
+                                                    Preview page
+                                                    <HugeiconsIcon
+                                                        icon={ArrowRight01Icon}
+                                                        data-icon="inline-end"
+                                                        aria-hidden="true"
+                                                    />
+                                                </Button>
+                                            </CardFooter>
+                                        </Card>
+                                    ),
+                                )}
+                            </div>
+                        </TabsContent>
+                    </Tabs>
+                )}
             </main>
             <footer>
                 <Separator />

@@ -1,6 +1,5 @@
 import type { BlockType } from '@/registry';
 import { blockRegistry } from '@/registry';
-import type { PageConfig } from '@/renderer/validate-page';
 
 export const contentSamples = ['default', 'long', 'minimal'] as const;
 export type ContentSample = (typeof contentSamples)[number];
@@ -18,16 +17,10 @@ export function blockPreviewConfig(
             'description',
             'secondaryAction',
             'note',
-            'visual',
+            'image',
             'action',
         ]) {
             delete props[key];
-        }
-
-        if (type === 'testimonials.grid') {
-            props.items = blockRegistry[type].defaultProps.items.map(
-                ({ quote, name }) => ({ quote, name }),
-            );
         }
     }
 
@@ -35,7 +28,7 @@ export function blockPreviewConfig(
         const expand = (value: unknown, key = ''): unknown => {
             if (
                 typeof value === 'string' &&
-                !['href', 'homeHref'].includes(key)
+                !['href', 'homeHref', 'src'].includes(key)
             ) {
                 return `${value} ${value} ${value}`;
             }
@@ -75,36 +68,5 @@ export function blockPreviewConfig(
 export const invalidExample = {
     schemaVersion: 1,
     theme: 'default',
-    sections: [
-        {
-            id: 'hero',
-            type: 'hero.split',
-            props: {
-                heading: 42,
-                primaryAction: {
-                    label: 'Continue',
-                    href: 'javascript:alert(1)',
-                },
-            },
-        },
-        { id: 'hero', type: 'hero.unknown', props: {} },
-    ],
-};
-
-export const minimalPage: PageConfig = {
-    schemaVersion: 1,
-    theme: 'default',
-    sections: [
-        {
-            id: 'intro',
-            type: 'hero.split',
-            props: {
-                heading: 'A good idea needs a place to start.',
-                primaryAction: {
-                    label: 'Say hello',
-                    href: 'mailto:hello@example.com',
-                },
-            },
-        },
-    ],
+    sections: [{ id: 'unknown', type: 'unknown.block', props: {} }],
 };

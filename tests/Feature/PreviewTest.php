@@ -24,7 +24,7 @@ test('each block is available without signing in', function (string $block) {
             ->where('name', $block)
             ->where('canvas', false)
             ->where('sample', 'default'));
-})->with(['navbar.simple', 'hero.split', 'features.grid', 'testimonials.grid', 'cta.banner', 'footer.simple']);
+})->with(['hero.centered', 'hero.split', 'hero.preview', 'pricing.cards', 'pricing.billing', 'pricing.offer', 'footer.compact', 'footer.columns', 'footer.cta']);
 
 test('block previews accept content stress samples', function (string $sample) {
     $this->get(route('preview.block', ['block' => 'hero.split', 'sample' => $sample]))
